@@ -5,21 +5,27 @@ import RFC from './Components/RFC';
 import BTLayout from './Components/BTLayout/BTLayout';
 import DataBiding from './DataBiding/DataBiding';
 import HanldeEvent from './HanldeEvent/HanldeEvent';
+import StateDemo from './StateDemo/StateDemo';
+import StyleComponent from './StyleComponent/StyleComponent';
+import RenderArray from './RenderArray/RenderArray';
 
 function App() {
   return (
     <div className="App">
+      {/* Buổi 1 */}
+      {/* <RFC />
       <RFC />
       <RFC />
-      <RFC />
-
       <RCC />
-
       <BTLayout />
-
       <DataBiding />
+      <HanldeEvent /> */}
 
-      <HanldeEvent />
+      {/* Buổi 2 */}      
+      {/* <StyleComponent /> */}
+      <StateDemo />
+      <RenderArray />
+
 
     </div>
   );
