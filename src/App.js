@@ -8,6 +8,12 @@ import HanldeEvent from './HanldeEvent/HanldeEvent';
 import StateDemo from './StateDemo/StateDemo';
 import StyleComponent from './StyleComponent/StyleComponent';
 import RenderArray from './RenderArray/RenderArray';
+import DemoProps from './Props/DemoProps/DemoProps';
+import ShoeShop from './Props/ShoeProps/ShoeShop';
+import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet/BaiTapXemChiTiet';
+
+
+
 
 function App() {
   return (
@@ -21,10 +27,19 @@ function App() {
       <DataBiding />
       <HanldeEvent /> */}
 
+
       {/* Buổi 2 */}      
-      {/* <StyleComponent /> */}
+      {/* <StyleComponent />
       <StateDemo />
-      <RenderArray />
+      <RenderArray /> */}
+
+
+      {/* Buổi 3 */}    
+      {/* <DemoProps /> */}
+      {/* <ShoeShop /> */}
+      <BaiTapXemChiTiet />
+
+      
 
 
     </div>
