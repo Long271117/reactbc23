@@ -5,7 +5,7 @@ export default class ChiTietSanPham extends Component {
     
     // Lấy dữ liệu sản phẩm thông qua this.props.spChiTiet
     let {maSP, tenSP, giaBan, hinhAnh, heDieuHanh, manHinh, ram, rom, cameraSau, cameraTruoc} = this.props.spChiTiet;
-
+    // Hoặc: let spChiTiet = this.props;  => Xuống dưới khi gọi phải spChiTiet.hinhAnh, spChiTiet.tenSP,...
 
     return (
         <div className="row mt-5">

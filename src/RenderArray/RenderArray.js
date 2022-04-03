@@ -29,7 +29,7 @@ export default class RenderArray extends Component {
         let result = this.arrProduct.map((product, index) => {
             return <tr key={product.id}>
                 <td>{product.id}</td>
-                <td>{product.id}</td>
+                <td>{product.name}</td>
                 <td><img src={product.img} alt='...' width={50} height={50} /></td>
                 <td>{product.price}</td>
                 <td></td>

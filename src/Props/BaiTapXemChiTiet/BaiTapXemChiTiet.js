@@ -65,7 +65,7 @@ export default class BaiTapXemChiTiet extends Component {
   renderProduct = () => {
       return this.arrPhone.map((phone, index) => {
           return <div className="col-4 mt-4" key={index}>
-              <SanPham phone={phone} xemChiTiet={this.xem}/>
+              <SanPham phone={phone} xemChiTiet={this.xemChiTiet}/>
           {/* <div className="card p-2">
               <img src={phone.hinhAnh} alt="..." className="w-full" height={300}/>
               <div className="card-body">

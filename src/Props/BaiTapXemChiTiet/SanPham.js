@@ -4,6 +4,7 @@ export default class SanPham extends Component {
   render() {
     
     let {phone} = this.props;
+    // let {xemChiTiet} = this.props;
 
     return (
       <div className="card p-2">
@@ -14,6 +15,7 @@ export default class SanPham extends Component {
           <button
             onClick={() => {
               this.props.xemChiTiet(phone)
+              // xemChiTiet(phone)
             }}
             className="btn btn-success"
           >
