@@ -10,7 +10,7 @@ export default class ProductItem extends Component {
     */
     
     // es6
-    let {prod} = this.props;
+    let {prod, xemChiTietGiay} = this.props;    
 
     // es5
     // let prod = this.props.prod;
@@ -27,7 +27,14 @@ export default class ProductItem extends Component {
         <div className="w-100">
           <p>{prod.name}</p>
           <p>Price: {prod.price}$</p>
-          <button className="btn btn-success">+ Add to carts</button>
+          <div className="d-flex justify-content-around flex-column">
+              <a href="#chiTietGiay">
+                  <button onClick={() => {
+                    xemChiTietGiay(prod)
+                  }} className="btn btn-primary col-8 mb-3">See more</button>
+              </a>
+              <button className="btn btn-success col-8">+ Add to carts</button>
+          </div>
         </div>
       </div>
     );

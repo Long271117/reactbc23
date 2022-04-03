@@ -29,15 +29,15 @@ function App() {
 
 
       {/* Buổi 2 */}      
-      <StyleComponent />
+      {/* <StyleComponent />
       <StateDemo />
-      <RenderArray />
+      <RenderArray /> */}
 
 
       {/* Buổi 3 */}    
-      {/* <DemoProps />
+      <DemoProps />
       <ShoeShop />
-      <BaiTapXemChiTiet /> */}
+      <BaiTapXemChiTiet />
 
       
 
