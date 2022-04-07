@@ -28,11 +28,9 @@ export default class ProductItem extends Component {
           <p>{prod.name}</p>
           <p>Price: {prod.price}$</p>
           <div className="d-flex justify-content-around flex-column">
-              <a href="#chiTietGiay">
-                  <button onClick={() => {
+              <button onClick={() => {
                     xemChiTietGiay(prod)
                   }} className="btn btn-primary col-8 mb-3">See more</button>
-              </a>
               <button className="btn btn-success col-8">+ Add to carts</button>
           </div>
         </div>

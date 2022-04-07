@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Cấu hình redux
+import {Provider} from 'react-redux';
+import {store} from './redux/conFigStore'
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
