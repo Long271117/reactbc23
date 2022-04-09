@@ -11,16 +11,19 @@ class TangGiamSoLuong extends Component {
       <div className='container'>
           <p>{this.props.number}</p>
           <button onClick={() => {
-
+            this.props.tangGiamSoLuong(1);
           }}>+</button>
-          <button>-</button>
+          <button onClick={() => {
+            this.props.tangGiamSoLuong(-1);
+          }}>-</button>
       </div>
     )
   }
 }
 
 // Lấy dữ liệu từ redux về
-const mapStateToProps = (rootReducer) => { // state tổng của tất cả ứng dụng
+// Cú pháp kết nối giữa react component và redux
+const mapStateToProps = (rootReducer) => { // state tổng của tất cả ứng dụng // Tạo ra các props cho component là giá trị
     return{
         number: rootReducer.stateNumber
         // tên number là tự do đặt
@@ -28,15 +31,22 @@ const mapStateToProps = (rootReducer) => { // state tổng của tất cả ứn
 }
 
 
-// Hàm định props gửi dữ liệu lên store, dùng để gửi giá trị lên store
+// Đĩnh nghĩa 1 hàm mapDispatchToProps => Nhiệm vụ: tạo ra các props cho component là hàm
 const mapDispatchToProps = (dispatch) => {
     return {
-        tangGiamSoLuong: () => {
-            
+        tangGiamSoLuong: (soLuong) => {
+            // console.log(soLuong)
+            // Để gửi dữ liệu lên redux (action)
+            const action = {
+              type: 'TANG_GIAM_SO_LUONG', // redux bắt buộc phải có
+              soLuong: soLuong
+            }
+            // Đưa dữ liệu lên redux
+            dispatch(action);
         }
     }
 }
 
-export default connect(mapStateToProps)(TangGiamSoLuong);
+export default connect(mapStateToProps, mapDispatchToProps)(TangGiamSoLuong);
 
 

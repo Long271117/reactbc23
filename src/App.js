@@ -12,6 +12,9 @@ import DemoProps from './Props/DemoProps/DemoProps';
 import ShoeShop from './Props/ShoeProps/ShoeShop';
 import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet/BaiTapXemChiTiet';
 import TangGiamSoLuong from './DemoRedux/TangGiamSoLuong/TangGiamSoLuong';
+import BaiTapChonXeRedux from './DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux';
+import BaiTapGioHangRedux from './DemoRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
+
 
 
 
@@ -31,9 +34,9 @@ function App() {
 
 
       {/* Buổi 2 */}      
-      {/* <StyleComponent />
-      <StateDemo />
-      <RenderArray /> */}
+      {/* <StyleComponent /> */}
+      {/* <StateDemo /> */}
+      {/* <RenderArray /> */}
 
 
       {/* Buổi 3 */}    
@@ -43,7 +46,12 @@ function App() {
       
 
       {/* Buổi 4 */}  
-      <TangGiamSoLuong />
+      {/* <TangGiamSoLuong /> */}
+
+
+      {/* Buổi 5 */}  
+      {/* <BaiTapChonXeRedux /> */}
+      <BaiTapGioHangRedux />
 
 
     </div>
