@@ -5,13 +5,16 @@ import { connect } from 'react-redux'
 
 
 class GioHangRedux extends Component {
-  render() {
+  render() {    
     return (
       <div>
           <div className='text-right'>
-              <span className='text-danger font-weight-bold'>Giỏ hàng (0)</span>
+            <span className='text-danger font-weight-bold'>Giỏ hàng ({this.props.stateGiohang.reduce((tongSoLuong, spGH, index) => {
+                return tongSoLuong += spGH.soLuong;
+                }, 0).toLocaleString()})
+            </span>
           </div>
-          <table className='table'>
+          <table style={{textAlign: "center"}} className='table'>
             <thead>
                 <tr>
                     <th>Mã sản phẩm</th>
@@ -29,9 +32,19 @@ class GioHangRedux extends Component {
                         <td>{spGH.maSP}</td>
                         <td>{spGH.tenSP}</td>
                         <td><img src={spGH.hinhAnh} width={50} height={50}/></td>
-                        <td>{spGH.giaBan}</td>
-                        <td>{spGH.soLuong}</td>
-                        <td>{spGH.giaBan * spGH.soLuong}</td>
+                        <td>{spGH.giaBan.toLocaleString()}</td>
+
+                        <td>
+                            <button onClick={() => {
+                                this.props.tangGiamSoLuong(spGH.maSP, 1)}} className='btn btn-primary mr-2'>+
+                            </button>
+                            {spGH.soLuong.toLocaleString()}
+                            <button onClick={() => {
+                                this.props.tangGiamSoLuong(spGH.maSP, -1)}} className='btn btn-primary ml-2'>-
+                            </button>
+                        </td>
+
+                        <td>{(spGH.giaBan * spGH.soLuong).toLocaleString()}</td>
                         <td>
                             <button onClick={() => {
                                 this.props.xoaGioHang(spGH.maSP)
@@ -42,6 +55,18 @@ class GioHangRedux extends Component {
                     </tr>
                 })}
             </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style={{fontWeight: "bold"}}></td>
+                    <td style={{fontWeight: "bold"}}>{this.props.stateGiohang.reduce((tongTien, spGH, index) => {
+                        return tongTien += spGH.giaBan * spGH.soLuong;
+                    }, 0).toLocaleString()}</td>
+                </tr>
+            </tfoot>
           </table>
       </div>
     )
@@ -56,7 +81,7 @@ const mapStateToProps = (rootReducer) => {
     }
 }
 
-// Định nghĩa sử kiện xáo giỏ hàng
+// Định nghĩa sử kiện xóa giỏ hàng
 const mapDispatchToProps = (dispatch) => {
     return  {
         xoaGioHang: (maSPClick) => {
@@ -69,9 +94,14 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(action);
         },
 
-        tangGiamSoLuong: (maSPClick, soLuong) => {
-            // Xử lý
-        }
+        tangGiamSoLuong: (maSPClick, soTangGiam) => {            
+            const action = {
+                type: 'TANG_GIAM_SO_LUONG',
+                maSPClick,
+                soTangGiam
+            }
+            dispatch(action)
+        },
     }
 }
 

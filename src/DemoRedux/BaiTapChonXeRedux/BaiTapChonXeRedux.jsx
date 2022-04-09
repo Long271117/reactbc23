@@ -22,7 +22,7 @@ class BaiTapChonXeRedux extends Component {
                       <div className='col-3'>
                           <button onClick={() => {
                               this.props.chonXe("black")
-                          }} className='btn' style={{backgroundColor: 'black', color: '#fff'}}>Black</button>
+                          }} className='btn' style={{backgroundColor: 'black', color: 'yellow'}}>Black</button>
                       </div> 
                       <div className='col-3'>
                           <button onClick={() => {
@@ -52,7 +52,7 @@ const mapStateToProps = (rootReducer) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         chonXe: (srcCar) => {
-                const action = {
+            const action = {
                 type: 'DOI_MAU_XE',
                 imgCar: `./img/products/${srcCar}-car.jpg`
             }

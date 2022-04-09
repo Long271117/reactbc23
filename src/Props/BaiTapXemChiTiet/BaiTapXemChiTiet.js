@@ -124,54 +124,32 @@ export default class BaiTapXemChiTiet extends Component {
       gioHang.push(sp);
     }
 
-    // setState => thay đổi giỏ hàng
     this.setState({
       gioHang: gioHang,
     });
   };
 
-  // Thiết kế giao diện
-  // biding dữ liệu arrayPhone lên giao diện
   renderProduct = () => {
     return this.arrPhone.map((phone, index) => {
       return (
         <div className="col-4 mt-4" key={index}>
-          {/* Vì nút button nằm ở component giỏ hàng nên phải dùng props, nếu nút button nằm ở chung file thì ko cần */}
-          {/* <button onClick={() => {
-              this.themGioHang()
-            }} >Thêm giỏ hàng</button> */}
-
           <SanPham
             phone={phone}
             xemChiTiet={this.xemChiTiet}
             themGioHang={this.themGioHang}
           />
-
-          {/* <div className="card p-2">
-              <img src={phone.hinhAnh} alt="..." className="w-full" height={300}/>
-              <div className="card-body">
-                  <p>{phone.tenSP}</p>
-                  <p>{phone.giaBan.toLocaleString}</p>
-                  <button onClick={() => {
-                      this.xemChiTiet(phone)
-                  }} className="btn btn-success">Xem chi tiết</button>
-              </div>
-          </div> */}
         </div>
       );
     });
   };
 
   xemChiTiet = (sanPhamClick) => {
-    // console.log("sanPhamClick", sanPhamClick);
-    // setState thay đổi spChiTiet
     this.setState({
       spChiTiet: sanPhamClick,
     });
   };
 
   render() {
-    //let {maSP, tenSP, giaBan, hinhAnh, heDieuHanh, manHinh, ram, rom, cameraSau, cameraTruoc} = this.state.spChiTiet
 
     let tongSoLuong = this.state.gioHang.reduce((tongSanPham, spGH, index) => {
       return (tongSanPham += spGH.soLuong);
@@ -180,74 +158,17 @@ export default class BaiTapXemChiTiet extends Component {
     return (
       <div className="container">
         <h3 className="mt-5">Giỏ hàng</h3>
-
-        {/* <button onClick={() => {
-          this.xoaGioHang()
-        }} >Xóa giỏ hàng</button> */}
         <GioHang
           tongSoLuong={tongSoLuong}
           gioHang={this.state.gioHang}
           xoaGioHang={this.xoaGioHang}
           tangGiamSoLuong={this.tangGiamSoLuong}
         />
-
         <h3 className="text-center mt-5">DANH SÁCH SẢN PHẨM</h3>
         <div className="row">
           {this.renderProduct()}
-          {/* <div className="col-4">
-            <div className="card">
-                <img src="" alt="..." className="w-full" height={300}/>
-                <div className="card-body">
-                    <p>Iphone 13</p>
-                    <p>27,000,000</p>
-                    <button className="btn btn-success">Xem chi tiết</button>
-                </div>
-            </div>
-          </div>
-          <div className="col-4">
-          </div>
-          <div className="col-4">
-          </div> */}
         </div>
-
         <ChiTietSanPham spChiTiet={this.state.spChiTiet} />
-        {/* <div className="row mt-5">
-            <div className="col-4">
-                <h3 className="text-center">{tenSP}</h3>
-                <img src={hinhAnh} alt="..." height={300} className="w-100"/>
-            </div>
-            <div className="col-8">
-                <h3>Thông số kỹ thuật</h3>
-                <table className="table">
-                    <tbody>
-                        <tr>
-                            <th>Màn hình</th>
-                            <th>{manHinh}</th>
-                        </tr>
-                        <tr>
-                            <th>Hệ điều hành</th>
-                            <th>{heDieuHanh}</th>
-                        </tr>
-                        <tr>
-                            <th>Camera trước</th>
-                            <th>{cameraTruoc}</th>
-                        </tr>
-                        <tr>
-                            <th>Camera sau</th>
-                            <th>{cameraSau}</th>
-                        </tr>
-                        <tr>
-                            <th>RAM</th>
-                            <th>{ram}</th>
-                        </tr>
-                        <tr>
-                            <th>ROM</th>
-                            <th>{rom}</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> */}
       </div>
     );
   }

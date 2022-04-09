@@ -12,7 +12,7 @@ class SanPhamRedux extends Component {
           <img src={sanPham.hinhAnh} alt="..." height={350} />
           <div className="card-body">
             <p>{sanPham.tenSP}</p>
-            <p>{sanPham.giaBan}</p>
+            <p>{sanPham.giaBan.toLocaleString()}</p>
             <button onClick={() => {
                 this.props.themGioHang(sanPham)
             }} className="btn btn-success">Thêm giỏ hàng</button>

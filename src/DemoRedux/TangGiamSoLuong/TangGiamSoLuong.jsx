@@ -8,14 +8,16 @@ class TangGiamSoLuong extends Component {
 
   render() {
     return (
-      <div className='container'>
-          <p>{this.props.number}</p>
+      <div className='container my-5'>          
           <button onClick={() => {
             this.props.tangGiamSoLuong(1);
-          }}>+</button>
+          }} className="btn btn-primary">+</button>
+
+          <span className="mx-3">{this.props.number}</span>
+
           <button onClick={() => {
             this.props.tangGiamSoLuong(-1);
-          }}>-</button>
+          }} className="btn btn-danger">-</button>
       </div>
     )
   }
