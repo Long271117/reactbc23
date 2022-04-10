@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ChiTietSanPhamRedux from "./ChiTietSanPhamRedux";
 import GioHangRedux from "./GioHangRedux";
 import SanPhamRedux from "./SanPhamRedux";
 
@@ -44,7 +45,7 @@ export default class BaiTapGioHangRedux extends Component {
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container my-5">
         <h3 className="mt-2">Giỏ hàng</h3>
         <GioHangRedux />
         <h3 className="text-center mb-3">Danh sách sản phẩm</h3>
@@ -57,6 +58,7 @@ export default class BaiTapGioHangRedux extends Component {
             );
           })}
         </div>
+        <ChiTietSanPhamRedux />
       </div>
     );
   }

@@ -15,7 +15,12 @@ class SanPhamRedux extends Component {
             <p>{sanPham.giaBan.toLocaleString()}</p>
             <button onClick={() => {
                 this.props.themGioHang(sanPham)
-            }} className="btn btn-success">Thêm giỏ hàng</button>
+                }} className="btn btn-success mr-2">Thêm giỏ hàng
+            </button>
+            <button onClick={() => {
+                this.props.xemChiTiet(sanPham)
+                }} className="btn btn-warning">Xem chi tiết
+            </button>
           </div>
         </div>
     );
@@ -35,7 +40,16 @@ const mapDispatchToProps = (dispatch) => {
             }
             // Đưa dữ liệu lên store
             dispatch(action)
-        }        
+        },
+
+        xemChiTiet: (sanPhamClick) => {
+          const action = {
+            type: 'XEM_CHI_TIET',
+            sanPhamClick
+          }
+          dispatch(action)
+        }
+
     }
 }
 

@@ -3,6 +3,7 @@ import {combineReducers, createStore} from 'redux'
 import { stateNumber } from './reducers/numberReducer';
 import { stateImgCar } from './reducers/stateImgCarReducer';
 import { gioHangReducer } from './reducers/gioHangReducer';
+import { xemChiTietReducer } from './reducers/xemChiTietReducer';
 
 // const stateDefaultImg = './img/products/red-car.jpg';
 
@@ -24,6 +25,8 @@ const rootReducer = combineReducers({
     // },
 
     gioHangReducer: gioHangReducer,
+
+    xemChiTietReducer: xemChiTietReducer,
 
 });
 
