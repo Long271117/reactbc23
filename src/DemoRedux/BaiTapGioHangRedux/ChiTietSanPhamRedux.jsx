@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 class ChiTietSanPhamRedux extends Component {
   render() {    
 
-   let {maSP, tenSP, giaBan, hinhAnh, heDieuHanh, manHinh, ram, rom, cameraSau, cameraTruoc} = this.props.stateXemChiTiet;
+   let {tenSP, hinhAnh, heDieuHanh, manHinh, ram, rom, cameraSau, cameraTruoc} = this.props.stateXemChiTiet;
 
     return (
         <div className="row mt-5">
@@ -19,27 +19,27 @@ class ChiTietSanPhamRedux extends Component {
                 <tbody>
                     <tr>
                         <th>Màn hình</th>
-                        <th>{manHinh}</th>
+                        <td>{manHinh}</td>
                     </tr>
                     <tr>
                         <th>Hệ điều hành</th>
-                        <th>{heDieuHanh}</th>
+                        <td>{heDieuHanh}</td>
                     </tr>
                     <tr>
                         <th>Camera trước</th>
-                        <th>{cameraTruoc}</th>
+                        <td>{cameraTruoc}</td>
                     </tr>
                     <tr>
                         <th>Camera sau</th>
-                        <th>{cameraSau}</th>
+                        <td>{cameraSau}</td>
                     </tr>
                     <tr>
                         <th>RAM</th>
-                        <th>{ram}</th>
+                        <td>{ram}</td>
                     </tr>
                     <tr>
                         <th>ROM</th>
-                        <th>{rom}</th>
+                        <td>{rom}</td>
                     </tr>
                 </tbody>
             </table>

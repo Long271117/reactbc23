@@ -3,26 +3,48 @@ import React, { Component } from 'react'
 // Kết nối redux
 import { connect } from 'react-redux'
 
-
 class GioHangRedux extends Component {
+
+//   tinhTongSoLuong = () => {
+// // Cách 1:
+// //       let tongSL = 0;
+// //       for(let spGH of this.props.stateGiohang){
+// //           tongSL += spGH.soLuong
+// //       }
+
+// // Cách 2:
+//       let tongSoLuong = this.props.stateGiohang.reduce((tongSoLuong, spGH, index) => {
+//         tongSoLuong += spGH.soLuong;}, 0);
+
+//         return tongSoLuong
+  
+
+// let tongTien = this.props.stateGiohang.reduce((tt, spGH) => {
+//     // Mỗi lần duyệt qua mỗi sản phẩm tính tổng tiền của sản phẩm đó rồi cộng dồn vào kết quá của hàm reduce
+//     let tong = spGH.giaBan * spGH.soLuong;
+//     return tt + tong;},0)
+
+//     return tongSoLuong + ' - ' + tongTien.toLocaleString()
+// }
+
+
   render() {    
     return (
       <div>
           <div className='text-right'>
-            <span className='text-danger font-weight-bold'>Giỏ hàng ({this.props.stateGiohang.reduce((tongSoLuong, spGH, index) => {
-                return tongSoLuong += spGH.soLuong;
-                }, 0).toLocaleString()})
-            </span>
+            <p className='text-danger font-weight-bold'>Giỏ hàng ({this.props.stateGiohang.reduce((tongSoLuong, spGH, index) => {
+                return tongSoLuong += spGH.soLuong;}, 0)})
+            </p>            
           </div>
-          <table style={{textAlign: "center"}} className='table'>
+          <table style={{textAlign: "center", valign: "middle"}} className='table'>
             <thead>
-                <tr>
+                <tr className='bg-warning'>
                     <th>Mã sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Hình ảnh</th>
                     <th>Giá bán</th>
                     <th>Số lượng</th>
-                    <th>Thành tiền</th>
+                    <th>Thành tiền</th> 
                     <th></th>
                 </tr>
             </thead>
@@ -64,7 +86,7 @@ class GioHangRedux extends Component {
                     <td style={{fontWeight: "bold"}}></td>
                     <td style={{fontWeight: "bold"}}>{this.props.stateGiohang.reduce((tongTien, spGH, index) => {
                         return tongTien += spGH.giaBan * spGH.soLuong;
-                    }, 0).toLocaleString()}</td>
+                    }, 0).toLocaleString()} VNĐ</td>
                 </tr>
             </tfoot>
           </table>

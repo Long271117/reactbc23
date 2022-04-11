@@ -14,6 +14,7 @@ import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet/BaiTapXemChiTiet';
 import TangGiamSoLuong from './DemoRedux/TangGiamSoLuong/TangGiamSoLuong';
 import BaiTapChonXeRedux from './DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux';
 import BaiTapGioHangRedux from './DemoRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
+import BaiTaiGameXucXac from './DemoRedux/BaiTapGameXucXac/BaiTaiGameXucXac';
 
 
 
@@ -51,8 +52,11 @@ function App() {
 
       {/* Buổi 5 */}  
       {/* <BaiTapChonXeRedux /> */}
-      <BaiTapGioHangRedux />
+      {/* <BaiTapGioHangRedux /> */}
 
+
+      {/* Buổi 6 */}  
+      <BaiTaiGameXucXac />
 
     </div>
   );

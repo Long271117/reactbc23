@@ -4,6 +4,7 @@ import { stateNumber } from './reducers/numberReducer';
 import { stateImgCar } from './reducers/stateImgCarReducer';
 import { gioHangReducer } from './reducers/gioHangReducer';
 import { xemChiTietReducer } from './reducers/xemChiTietReducer';
+import { gameXucXacReducer } from './reducers/gameXucXacReducer';;
 
 // const stateDefaultImg = './img/products/red-car.jpg';
 
@@ -27,6 +28,8 @@ const rootReducer = combineReducers({
     gioHangReducer: gioHangReducer,
 
     xemChiTietReducer: xemChiTietReducer,
+
+    gameXucXacReducer
 
 });
 
