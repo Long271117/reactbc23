@@ -1,29 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
-import RCC from './Components/RCC';
-import RFC from './Components/RFC';
-import BTLayout from './Components/BTLayout/BTLayout';
-import DataBiding from './DataBiding/DataBiding';
-import HanldeEvent from './HanldeEvent/HanldeEvent';
-import StateDemo from './StateDemo/StateDemo';
-import StyleComponent from './StyleComponent/StyleComponent';
-import RenderArray from './RenderArray/RenderArray';
-import DemoProps from './Props/DemoProps/DemoProps';
-import ShoeShop from './Props/ShoeProps/ShoeShop';
-import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet/BaiTapXemChiTiet';
-import TangGiamSoLuong from './DemoRedux/TangGiamSoLuong/TangGiamSoLuong';
-import BaiTapChonXeRedux from './DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux';
-import BaiTapGioHangRedux from './DemoRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
-import BaiTaiGameXucXac from './DemoRedux/BaiTapGameXucXac/BaiTaiGameXucXac';
+import logo from "./logo.svg";
+import "./App.css";
+import RCC from "./Components/RCC";
+import RFC from "./Components/RFC";
+import BTLayout from "./Components/BTLayout/BTLayout";
+import DataBiding from "./DataBiding/DataBiding";
+import HanldeEvent from "./HanldeEvent/HanldeEvent";
+import StateDemo from "./StateDemo/StateDemo";
+import StyleComponent from "./StyleComponent/StyleComponent";
+import RenderArray from "./RenderArray/RenderArray";
+import DemoProps from "./Props/DemoProps/DemoProps";
+import ShoeShop from "./Props/ShoeProps/ShoeShop";
+import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
+import TangGiamSoLuong from "./DemoRedux/TangGiamSoLuong/TangGiamSoLuong";
+import BaiTapChonXeRedux from "./DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux";
+import BaiTapGioHangRedux from "./DemoRedux/BaiTapGioHangRedux/BaiTapGioHangRedux";
+import BaiTaiGameXucXac from "./DemoRedux/BaiTapGameXucXac/BaiTaiGameXucXac";
 
-
-
-
-
+// Cấu hình router cho  app component
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import HeaderHome from "./HeaderHome/HeaderHome";
+import Profile from "./pages/Profile/Profile";
+import Detail from "./pages/Detail/Detail";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      {/* <HeaderHome /> */}
+      <Switch>
+        <Route exact path={"/home"} render={(propsRoute) => { // propsRoute là this.props.history, this.props.location, this.props.match
+           return <div>
+             <HeaderHome />
+             
+             {/* <Home history={propsRoute.history}/> */}
+             <Home {...propsRoute}/>
+           </div>
+        }} />
+        <Route exact path={"/about"} component={About} />
+        <Route exact path={"/contact"} component={Contact} />
+        <Route exact path={"/login"} component={Login} />
+        <Route exact path={"/register"} component={Register} />
+        <Route exact path={"/profile"} component={Profile} />
+        <Route exact path={"/search"} component={Search} />
+        <Route exact path={"/detail/:postid"} component={Detail} />
+        <Route exact path={"/"} component={Home} />
+      </Switch>
+
+
+
       {/* Buổi 1 */}
       {/* <RFC />
       <RFC />
@@ -33,32 +62,27 @@ function App() {
       <DataBiding />
       <HanldeEvent /> */}
 
-
-      {/* Buổi 2 */}      
+      {/* Buổi 2 */}
       {/* <StyleComponent /> */}
       {/* <StateDemo /> */}
       {/* <RenderArray /> */}
 
-
-      {/* Buổi 3 */}    
+      {/* Buổi 3 */}
       {/* <DemoProps /> */}
       {/* <ShoeShop /> */}
       {/* <BaiTapXemChiTiet /> */}
-      
 
-      {/* Buổi 4 */}  
+      {/* Buổi 4 */}
       {/* <TangGiamSoLuong /> */}
 
-
-      {/* Buổi 5 */}  
+      {/* Buổi 5 */}
       {/* <BaiTapChonXeRedux /> */}
       {/* <BaiTapGioHangRedux /> */}
 
+      {/* Buổi 6 */}
+      {/* <BaiTaiGameXucXac /> */}
 
-      {/* Buổi 6 */}  
-      <BaiTaiGameXucXac />
-
-    </div>
+    </BrowserRouter>
   );
 }
 
