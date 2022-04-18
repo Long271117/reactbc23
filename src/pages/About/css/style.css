@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.clear {
+  clear: both;
+}
+.container {
+  max-width: 1280px;
+  width: 80%;
+  margin: auto;
+}
+
+/* -- HEADER --*/
+.header{
+  background-color: red;
+}
+.header .container {
+  background-color: #ffffff;
+  padding: 15px 0;
+  color: #1b1d2d;
+}
+.header .logo {
+  text-decoration: none;
+  color: #1b1d2d;
+  font-size: 30px;
+  font-weight: bold;
+}
+.header .logo i {
+  color: #fdc800;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #00234a;
+  position: relative;
+  top: -5px;
+}
+.header .navbar {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.header .navbar a {
+  color: #1b1d2d;
+  font-size: 15px;
+  margin-right: 35px;
+  text-decoration: none;
+}
+.header .navbar a:hover {
+  color: #ff0000;
+}
+
+/* -- CAROUSEL --*/
+.carousel {
+  background-image: url(../img/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 550px;
+}
+
+/* -- INTRO -- */
+.intro {
+  background-color: #ffffff;
+  margin: 50px 0;
+}
+.intro .intro-float {
+  float: left;
+  width: 50%;
+}
+.intro .intro-left {
+  padding-right: 50px;
+}
+.intro .intro-left h1 {
+  font-size: 25px;
+  color: #1b1d2d;
+  margin-bottom: 20px;
+}
+.intro .intro-left p {
+  font-size: 13px;
+  color: #797979;
+  line-height: 22px;
+  text-align: justify;
+  margin-bottom: 18px;
+}
+.intro .intro-left span {
+  font-size: 13px;
+  color: #797979;
+  line-height: 22px;
+  text-align: justify;
+  margin-bottom: 40px;
+  display: block;
+}
+.intro .intro-left a {
+  font-size: 13px;
+  color: #002146;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #fdc800;
+  padding: 10px 25px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #000000;
+}
+.intro .intro-left a:hover {
+  color: #fdc800;
+  background-color: #002146;
+}
+.intro .intro-right img {
+  width: 100%;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+/* -- STATISTIC -- */
+.statistic {
+  background-color: #f6f6f6;
+  box-shadow: 0 0 5px #000000;
+}
+.statistic .list .item {
+  float: left;
+  width: 25%;
+  padding: 55px 0;
+}
+.statistic .list .item .content h1 {
+  color: #212529;
+  font-size: 45px;
+  margin-right: 15px;
+  float: left;
+  width: 20%;
+}
+.statistic .list .item .content p {
+  font-size: 13px;
+  line-height: 20px;
+  position: relative;
+  top: 5px;
+}
+.statistic .list .item .content:hover h1, .statistic .list .item .content:hover p{
+  color: #ff0000;
+}
+
+/* -- PRODUCT -- */
+.product {
+  margin: 100px 0;
+  background-color: #ffffff;
+}
+.product .list .item {
+  float: left;
+  width: 25%;
+  color: #ffffff;
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+.product .list .item .content {
+  text-align: center;
+  background-color: #002146;
+  padding: 35px 20px;
+  border-radius: 4px;
+}
+.product .list .item .content a {
+  font-size: 13px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.product .list .item .content a i {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+.product .list .item:hover .content {
+  background-color: #025cc4;
+}
+.product .list .item .content:hover a {
+  color: #fdc800;
+}
+
+/* -- EVENT -- */
+.event {
+  background-color: #f6f6f6;
+  padding: 100px 0;
+  box-shadow: 0 0 5px #000000;
+}
+.event .container > div > h1 {
+  color: #1d1d27;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+.event .event-left,
+.event .event-right {
+  float: left;
+  width: 50%;
+}
+/* Event left */
+.event .event-left {
+  padding-right: 50px;
+}
+.event .event-left .list {
+  background-color: #ffffff;  
+  box-shadow: 0 0 5px #000000;
+}
+.event .event-left .list .item {
+  padding: 20px;
+}
+.event .event-left .list .border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.event .event-left .list .item .content {
+  background-color: #ffffff;
+}
+.event .event-left .list .item .content .img-lastest {
+  float: left;
+  width: 35%;
+  padding-right: 15px;
+}
+.event .event-left .list .item .content .img-lastest img {
+  width: 100%;
+  border-radius: 4px;
+}
+.event .event-left .list .item .content .img-lastest img:hover {
+  cursor: pointer;
+}
+.event .event-left .list .item .content .info-lastest {
+  float: left;
+  width: 65%;
+  padding-right: 20px;
+}
+.event .event-left .list .item .content .info-lastest h1 {
+  color: #1d1d27;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.event .event-left .list .item .content .info-lastest span {
+  display: block;
+  color: #9b9b9b;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.event .event-left .list .item .content .info-lastest p {
+  color: #1d1d27;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: justify;
+}
+.event .event-left .list .item:hover,
+.event .event-left .list .item:hover .content {
+  background-color: #ffe1c5;
+  cursor: pointer;
+}
+.event .event-left .list .item:hover .content .info-lastest h1,
+.event .event-left .list .item:hover .content .info-lastest span,
+.event .event-left .list .item:hover .content .info-lastest p {
+  color: #0000ff;
+}
+/* Event right */
+.event .event-right .list {
+  background-color: #ffffff;  
+  box-shadow: 0 0 5px #000000;
+}
+.event .event-right .list .item {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.event .event-right .list .item .calendar-upcoming {
+  float: left;
+  width: 20%;
+}
+.event .event-right .calendar-upcoming {
+  background-color: #fdc800;
+  color: #1b1d2d;
+  text-align: center;
+  border-radius: 4px;
+}
+.event .event-right .calendar-upcoming h1 {
+  font-size: 25px;
+  padding: 15px 0 5px 0;
+}
+.event .event-right .calendar-upcoming p {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+.event .event-right .calendar-upcoming span {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #002146;
+  padding: 10px 0;
+  margin-top: 0;
+  border-radius: 0 0 4px 4px;
+}
+.event .event-right .list .item .info-upcoming {
+  float: left;
+  width: 80%;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+.event .event-right .list .item .info-upcoming h1 {
+  color: #1d1d27;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.event .event-right .list .item .info-upcoming p {
+  color: #1d1d27;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+.event .event-right .list .item .info-upcoming span {
+  color: #002146;
+  font-size: 13px;
+  padding: 3px 15px 3px 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+.event .event-right .list .item .info-upcoming pre {
+  display: inline;
+  color: #002146;
+  font-size: 13px;
+  margin-left: 10px;
+}
+.event .event-right .list .item:hover{
+  background-color: #ffe1c5;
+  cursor: pointer;
+}
+.event .event-right .list .item:hover .info-upcoming h1,
+.event .event-right .list .item:hover .info-upcoming p,
+.event .event-right .list .item:hover .info-upcoming span,
+.event .event-right .list .item:hover .info-upcoming pre {  
+  color: #0000ff;
+}
+.event .event-right .list .item:hover .calendar-upcoming h1,
+.event .event-right .list .item:hover .calendar-upcoming p,
+.event .event-right .list .item:hover .calendar-upcoming span {
+  color: #ff0000;
+}
+.event .viewall {
+  text-align: right;
+  margin-top: 35px;
+}
+.event .viewall a {
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #002146;
+  background-color: #fdc800;
+  padding: 12px 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #000000;
+}
+.event .viewall a:hover {
+  color: #fdc800;
+  background-color: #002146;
+}
+
+/* -- FOOTER -- */
+.footer {
+  background-color: #002146;
+  padding: 50px 0;
+}
+.footer .footer-top {
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+.footer .footer-top h1 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.footer .footer-top .float-footer {
+  float: left;
+  width: calc(100% / 3);
+  padding-right: 40px;
+}
+.footer .footer-top .contact .info-contact a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.footer .footer-top .contact .info-contact a i {
+  color: #fdc800;
+  margin-right: 10px;
+}
+.footer .footer-top ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer .footer-top ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+}
+.footer .footer-top .float-footer a:hover {
+  color: #fdc800;
+}
+.footer .footer-bottom {
+  margin-top: 30px;
+  color: #ffffff;
+  font-size: 13px;
+}

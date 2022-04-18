@@ -27,11 +27,12 @@ import HeaderHome from "./HeaderHome/HeaderHome";
 import Profile from "./pages/Profile/Profile";
 import Detail from "./pages/Detail/Detail";
 import Search from "./pages/Search/Search";
+import BaiTapQuanLyNguoiDung from "./pages/BaiTapQuanLyNguoiDung/BaiTapQuanLyNguoiDung";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <HeaderHome /> */}
+      <HeaderHome />
       <Switch>
         <Route exact path={"/home"} render={(propsRoute) => { // propsRoute là this.props.history, this.props.location, this.props.match
            return <div>
@@ -48,6 +49,7 @@ function App() {
         <Route exact path={"/profile"} component={Profile} />
         <Route exact path={"/search"} component={Search} />
         <Route exact path={"/detail/:postid"} component={Detail} />
+        <Route exact path={"/btqlnd"} component={BaiTapQuanLyNguoiDung} />
         <Route exact path={"/"} component={Home} />
       </Switch>
 

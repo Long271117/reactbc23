@@ -69,6 +69,16 @@ export default class HeaderHome extends Component {
                 Register
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                activeStyle={{ borderRadius: "5px" }}
+                activeClassName="bg-white text-primary"
+                className="nav-link text-warning"
+                to="/btqlnd"
+              >
+                BTQLND
+              </NavLink>
+            </li>
             <li className="nav-item dropdown">
               <NavLink
                 className="nav-link dropdown-toggle"
