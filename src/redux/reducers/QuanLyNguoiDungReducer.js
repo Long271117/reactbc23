@@ -1,3 +1,5 @@
+import { act } from "react-dom/test-utils";
+
 const stateDefault = {
   mangNguoiDung: [
     {
@@ -18,12 +20,12 @@ const stateDefault = {
     },
   ],
   nguoiDungSua: {
-    taiKhoan: "nguyenvanb",
-    matKhau: "654321",
-    hoTen: "Nguyễn Văn B",
-    soDienThoai: "987654321",
-    email: "nguyenvanb@gmail.com",
-    loaiNguoiDung: "QuanDung",
+    // taiKhoan: "nguyenvanb",
+    // matKhau: "654321",
+    // hoTen: "Nguyễn Văn B",
+    // soDienThoai: "987654321",
+    // email: "nguyenvanb@gmail.com",
+    // loaiNguoiDung: "QuanDung",
   },
 };
 
@@ -42,9 +44,22 @@ export const quanLyNguoiDungReducer = (state = stateDefault, action) => {
     }
 
     case "SUA_NGUOI_DUNG": {
-      state.nguoiDungSua = action.nguoiDung
-      
-      
+      state.nguoiDungSua = action.nguoiDung;
+      return { ...state };
+    }
+
+    case "CAP_NHAT_THONG_TIN": {
+      // Tìm ra người dung chỉnh sửa trong mảng
+      let mangNguoiDung = [...state.mangNguoiDung];
+      // Tìm ra người dung trong mảng thay đổi dựa vào thuộc tính tài khoản
+      let nguoiDungUpdate = mangNguoiDung.find((nd) => nd.taiKhoan === action.nguoiDungCapNhat.taiKhoan);
+      if (nguoiDungUpdate) {
+        for(let key in nguoiDungUpdate){
+          nguoiDungUpdate[key] = action.nguoiDungCapNhat[key]
+        }
+      }
+      // Cập nhật lại state
+      state.mangNguoiDung = mangNguoiDung
       return { ...state };
     }
 
