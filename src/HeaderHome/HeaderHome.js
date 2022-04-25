@@ -94,8 +94,34 @@ export default class HeaderHome extends Component {
                 <NavLink className="dropdown-item" to="/lifecycle">
                   LifeCycle
                 </NavLink>
-              </div>
+                <NavLink className="dropdown-item" to="/usestate">
+                  useState
+                </NavLink>
+                <NavLink className="dropdown-item" to="/useeffect">
+                  useEffect
+                </NavLink>
+              </div>            </li>
+              <li className="nav-item">
+              <NavLink
+                activeStyle={{ borderRadius: "5px" }}
+                activeClassName="bg-white text-primary"
+                className="nav-link text-warning"
+                to="/apircc"
+              >
+                API RCC
+              </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                activeStyle={{ borderRadius: "5px" }}
+                activeClassName="bg-white text-primary"
+                className="nav-link text-warning"
+                to="/apirfc"
+              >
+                API RFC
+              </NavLink>
+            </li>
+
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
