@@ -6,7 +6,7 @@ import { gioHangReducer } from './reducers/gioHangReducer';
 import { xemChiTietReducer } from './reducers/xemChiTietReducer';
 import { gameXucXacReducer } from './reducers/gameXucXacReducer';
 import { quanLyNguoiDungReducer } from './reducers/QuanLyNguoiDungReducer';
-
+import { tasksReducer } from './reducers/tasksReducer/tasksReducer';
 // const stateDefaultImg = './img/products/red-car.jpg';
 
 const rootReducer = combineReducers({
@@ -33,6 +33,8 @@ const rootReducer = combineReducers({
     gameXucXacReducer,
 
     quanLyNguoiDungReducer: quanLyNguoiDungReducer,
+
+    tasksReducer,
 
 });
 

@@ -27,7 +27,7 @@ export const gioHangReducer = (state = stateDefault, action) => {
       return gioHang;
     }
 
-    case "TANG_GIAM_SO_LUONG": {
+    case "TANG_GIAM_SO_LUONG_": {
       let gioHang = [...state];
       let spGH = gioHang.find((sp) => sp.maSP === action.maSPClick);
       if (spGH) {

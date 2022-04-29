@@ -33,6 +33,10 @@ import DemoUseState from "./hooks/DemoUseState/DemoUseState";
 import DemoUseEffect from "./hooks/demoUseEffect/DemoUseEffect";
 import ApiRfc from "./pages/Api/DemoApi/ApiRfc";
 import ApiFcc from "./pages/Api/DemoApi/ApiFcc";
+import CustomHooks from "./hooks/CustomHooks/CustomHooks";
+import TangGiamSoLuongHooks from "./DemoRedux/TangGiamSoLuongHooks/TangGiamSoLuongHooks";
+import ApiReduxHooks from "./pages/Api/DemoApi/ApiReduxHooks";
+
 
 function App() {
   return (
@@ -61,7 +65,9 @@ function App() {
         <Route exact path={"/useeffect"} component={DemoUseEffect} />
         <Route exact path={"/apirfc"} component={ApiRfc} />
         <Route exact path={"/apircc"} component={ApiFcc} />
-
+        <Route exact path={"/customhooks"} component={CustomHooks} />
+        <Route exact path={"/reduxhooks"} component={TangGiamSoLuongHooks} />
+        <Route exact path={"/apireduxhooks"} component={ApiReduxHooks} />
         <Route exact path={"/"} component={Home} />
       </Switch>
 

@@ -100,8 +100,12 @@ export default class HeaderHome extends Component {
                 <NavLink className="dropdown-item" to="/useeffect">
                   useEffect
                 </NavLink>
-              </div>            </li>
-              <li className="nav-item">
+                <NavLink className="dropdown-item" to="/customhooks">
+                  customHooks
+                </NavLink>
+              </div>{" "}
+            </li>
+            <li className="nav-item">
               <NavLink
                 activeStyle={{ borderRadius: "5px" }}
                 activeClassName="bg-white text-primary"
@@ -121,7 +125,6 @@ export default class HeaderHome extends Component {
                 API RFC
               </NavLink>
             </li>
-
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
