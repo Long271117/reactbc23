@@ -79,25 +79,25 @@ export default class HeaderHome extends Component {
                 BTQLND
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item dropdown">
               <NavLink
-                activeStyle={{ borderRadius: "5px" }}
-                activeClassName="bg-white text-primary text-warning"
-                className="nav-link "
-                to="/apircc"
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                API RCC
+                API
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                activeStyle={{ borderRadius: "5px" }}
-                activeClassName="bg-white text-primary text-warning"
-                className="nav-link "
-                to="/apirfc"
-              >
-                API RFC
-              </NavLink>
+              <div className="dropdown-menu" aria-labelledby="dropdownId">
+                <NavLink className="dropdown-item" to="/apircc">
+                  API RCC
+                </NavLink>
+                <NavLink className="dropdown-item" to="/apirfc">
+                  API RFC
+                </NavLink>
+              </div>{" "}
             </li>
             <li className="nav-item dropdown">
               <NavLink
@@ -137,7 +137,7 @@ export default class HeaderHome extends Component {
                 </NavLink>
                 <NavLink className="dropdown-item" to="/useref">
                   Demo UseRef
-                </NavLink>                
+                </NavLink>
               </div>{" "}
             </li>
             <li className="nav-item dropdown">
@@ -155,11 +155,10 @@ export default class HeaderHome extends Component {
                 <NavLink className="dropdown-item" to="/todolistapp">
                   To Do list App
                 </NavLink>
-              
               </div>{" "}
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
+          {/* <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"
               type="text"
@@ -171,7 +170,7 @@ export default class HeaderHome extends Component {
             >
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </nav>
     );
