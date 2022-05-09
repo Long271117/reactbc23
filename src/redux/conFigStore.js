@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore, compose } from "redux";
 
 import { stateNumber } from "./reducers/numberReducer";
 import { stateImgCar } from "./reducers/stateImgCarReducer";
