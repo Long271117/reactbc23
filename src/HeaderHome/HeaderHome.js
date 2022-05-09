@@ -79,6 +79,26 @@ export default class HeaderHome extends Component {
                 BTQLND
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                activeStyle={{ borderRadius: "5px" }}
+                activeClassName="bg-white text-primary text-warning"
+                className="nav-link "
+                to="/apircc"
+              >
+                API RCC
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                activeStyle={{ borderRadius: "5px" }}
+                activeClassName="bg-white text-primary text-warning"
+                className="nav-link "
+                to="/apirfc"
+              >
+                API RFC
+              </NavLink>
+            </li>
             <li className="nav-item dropdown">
               <NavLink
                 className="nav-link dropdown-toggle"
@@ -103,27 +123,40 @@ export default class HeaderHome extends Component {
                 <NavLink className="dropdown-item" to="/customhooks">
                   customHooks
                 </NavLink>
+                <NavLink className="dropdown-item" to="/reduxhooks">
+                  Redux Hooks
+                </NavLink>
+                <NavLink className="dropdown-item" to="/apireduxhooks">
+                  API Redux Hooks
+                </NavLink>
+                <NavLink className="dropdown-item" to="/usecallback">
+                  Demo UseCallback
+                </NavLink>
+                <NavLink className="dropdown-item" to="/usememo">
+                  Demo UseMenmo
+                </NavLink>
+                <NavLink className="dropdown-item" to="/useref">
+                  Demo UseRef
+                </NavLink>                
               </div>{" "}
             </li>
-            <li className="nav-item">
+            <li className="nav-item dropdown">
               <NavLink
-                activeStyle={{ borderRadius: "5px" }}
-                activeClassName="bg-white text-primary"
-                className="nav-link text-warning"
-                to="/apircc"
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                API RCC
+                Redux Thunks Middleware
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                activeStyle={{ borderRadius: "5px" }}
-                activeClassName="bg-white text-primary"
-                className="nav-link text-warning"
-                to="/apirfc"
-              >
-                API RFC
-              </NavLink>
+              <div className="dropdown-menu" aria-labelledby="dropdownId">
+                <NavLink className="dropdown-item" to="/todolistapp">
+                  To Do list App
+                </NavLink>
+              
+              </div>{" "}
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">

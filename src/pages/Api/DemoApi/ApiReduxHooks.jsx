@@ -47,10 +47,11 @@ export default function ApiReduxHooks() {
   }
 
   return <div>
-      {data.map(item => {
-          return <p>{item.taskName}</p>
+      {data.map((item, index) => {
+          return <p key={index}>{item.taskName}</p>
       })}
   </div>
 
 
 }
+    

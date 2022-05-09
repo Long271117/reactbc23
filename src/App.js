@@ -36,6 +36,11 @@ import ApiFcc from "./pages/Api/DemoApi/ApiFcc";
 import CustomHooks from "./hooks/CustomHooks/CustomHooks";
 import TangGiamSoLuongHooks from "./DemoRedux/TangGiamSoLuongHooks/TangGiamSoLuongHooks";
 import ApiReduxHooks from "./pages/Api/DemoApi/ApiReduxHooks";
+import DemoUseCallBack from "./hooks/DemoUseCallBack/DemoUseCallBack";
+import DemoUseMemo from "./hooks/DemoUseMemo/DemoUseMemo";
+import DemoUseRef from "./hooks/DemoUseRef/DemoUseRef";
+import ToDoListApp from "./pages/DemoThunk/ToDoListApp";
+
 
 
 function App() {
@@ -68,6 +73,10 @@ function App() {
         <Route exact path={"/customhooks"} component={CustomHooks} />
         <Route exact path={"/reduxhooks"} component={TangGiamSoLuongHooks} />
         <Route exact path={"/apireduxhooks"} component={ApiReduxHooks} />
+        <Route exact path={"/usecallback"} component={DemoUseCallBack} />
+        <Route exact path={"/usememo"} component={DemoUseMemo} />
+        <Route exact path={"/useref"} component={DemoUseRef} />
+        <Route exact path={"/todolistapp"} component={ToDoListApp} />
         <Route exact path={"/"} component={Home} />
       </Switch>
 
