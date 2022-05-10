@@ -96,3 +96,21 @@ export const rejectTaskApi = (taskName) => {
     }
   };
 };
+
+// export const searchTaskApi = (taskName) => {
+//   return async (dispatch) => {
+//     try {
+//       let result = await axios({
+//         url: "http://svcy.myclass.vn/api/ToDoList/GetTask?taskName=" + taskName,
+//         method: "GET",
+//       });
+//       //alert(result.data);
+//       // Sau khi gọi api thành công thì gọi lại action getTaskApi
+//       const action = getTaskApiAction;
+//       dispatch(action);
+//       // dispatch(getTaskApiAction)
+//     } catch (err) {
+//       console.log({ err });
+//     }
+//   };
+// };

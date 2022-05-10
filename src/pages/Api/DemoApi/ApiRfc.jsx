@@ -22,6 +22,17 @@ export default function ApiRfc(props) {
     }
   };
 
+  const deleteTask = async (taskName) => {
+    try {
+      const { data } = await axios.delete(
+        `http://svcy.myclass.vn/api/ToDoList/deleteTask?taskName=${taskName}`
+      );
+      setTasks([data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     // Tạo async function
     async function getTask() {
@@ -36,9 +47,10 @@ export default function ApiRfc(props) {
         console.log(error);
       }
     }
+
     // Call function
     getTask();
-  }, []); // Nhận vào 1 callback funciton, tham số 2 là 1 array, [] nghĩa là chạy 1 lần duy nhất (didMount)
+  }, [tasks]); // Nhận vào 1 callback funciton, tham số 2 là 1 array, [] nghĩa là chạy 1 lần duy nhất (didMount)
 
   return (
     <div className="container mt-4">
@@ -62,28 +74,74 @@ export default function ApiRfc(props) {
       <div className="d-flex justify-content-center">
         <table className="table w-50 text-center">
           <tbody>
-            {tasks.map((task, index) => {
-              return (
-                <tr key={index}>
-                  <td>{task.taskName}</td>
-                  <td>
-                    <span className="badge badge-danger">{task.status}</span>
-                    <span
-                      className="fa fa-check ml-2"
-                      style={{ fontSize: 25 }}
-                    ></span>
-                  </td>
-                </tr>
-              );
-            })}
+            {tasks
+              .filter((task) => !task.status)
+              .map((task, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{task.taskName}</td>
+                    <td>
+                      <span className="badge badge-danger">{task.status}</span>
+                      <span
+                        className="fa fa-check ml-2 text-success"
+                        style={{ fontSize: 25, cursor: "pointer" }}
+                        onClick={() => {
+                          try {
+                            const { data } = axios.put(
+                              `http://svcy.myclass.vn/api/ToDoList/doneTask?taskName=${task.taskName}`
+                            );
+                            this.setTasks([data]);
+                          } catch (error) {
+                            console.log(error);
+                          }
+                        }}
+                      ></span>
+                      <span
+                        onClick={() => {
+                          deleteTask(task.taskName);
+                        }}
+                        className="fa fa-trash text-danger ml-3"
+                        style={{ fontSize: 25, cursor: "pointer" }}
+                      ></span>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
           <tfoot>
-            {/* <tr>
-              <td>Tập thể dục</td>
-              <td>
-                <span className="badge badge-success">Complete</span>
-              </td>
-            </tr> */}
+            {tasks
+              .filter((task) => task.status)
+              .map((task, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{task.taskName}</td>
+                    <td>
+                      <span className="badge badge-danger">{task.status}</span>
+                      <span
+                        className="fa fa-undo ml-2 text-primary"
+                        style={{ fontSize: 25, cursor: "pointer" }}
+                        onClick={() => {
+                          try {
+                            const { data } = axios.put(
+                              `http://svcy.myclass.vn/api/ToDoList/rejectTask?taskName=${task.taskName}`
+                            );
+                            this.setTasks([data]);
+                          } catch (error) {
+                            console.log(error);
+                          }
+                        }}
+                      ></span>
+                      <span
+                        onClick={() => {
+                          deleteTask(task.taskName);
+                        }}
+                        className="fa fa-trash text-danger ml-3"
+                        style={{ fontSize: 25, cursor: "pointer" }}
+                      ></span>
+                    </td>
+                  </tr>
+                );
+              })}
           </tfoot>
         </table>
       </div>

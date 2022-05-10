@@ -7,42 +7,42 @@ export default class ApiFcc extends Component {
   };
 
   getAllTaskApi = async () => {
-    // // Cách 1: promise
-    // let promise = axios({
-    //   url: "http://svcy.myclass.vn/api/ToDoList/GetAllTask",
-    //   method: "GET",
-    // });
+    // Cách 1: promise
+    let promise = axios({
+      url: "http://svcy.myclass.vn/api/ToDoList/GetAllTask",
+      method: "GET",
+    });
 
-    // // Xử lý thành công
-    // promise.then((result) => {
-    //   console.log("result", result.data);
-    //   console.table(result.data);
-    //   // Lấy dữ liệu về và gán vào state
-    //   this.setState({
-    //     arrTask: result.data,
-    //   });
-    // });
-
-    // // Xử lý thất bại
-    // promise.catch((err) => {
-    //   console.log({ err });
-    // });
-
-    // Cách 2: Sử dụng async await
-    try {
-      let result = await axios({
-        url: "http://svcy.myclass.vn/api/ToDoList/GetAllTask",
-        method: "GET",
-      });
+    // Xử lý thành công
+    promise.then((result) => {
       console.log("result", result.data);
-      console.log(123);
+      console.table(result.data);
+      // Lấy dữ liệu về và gán vào state
       this.setState({
         arrTask: result.data,
       });
-    } catch (err) {
-      console.log({ err }); // try catch => chương trình sẽ không bị đứng khi gặp lỗi
-    }
-  };
+    });
+
+    // Xử lý thất bại
+    promise.catch((err) => {
+      console.log({ err });
+    });
+  }
+    // Cách 2: Sử dụng async await
+  //   try {
+  //     let result = await axios({
+  //       url: "http://svcy.myclass.vn/api/ToDoList/GetAllTask",
+  //       method: "GET",
+  //     });
+  //     console.log("result", result.data);
+  //     console.log(123);
+  //     this.setState({
+  //       arrTask: result.data,
+  //     });
+  //   } catch (err) {
+  //     console.log({ err }); // try catch => chương trình sẽ không bị đứng khi gặp lỗi
+  //   }
+  // };
 
   // Nên sử dụng promise khi nào ? async await khi nào ?
   // TH1: api1 -> load dữ liệu -> dùng dữ liệu api1 -> call api2 -> dùng dữ liệu api2 -> call api 3 lấy dữ liệu
@@ -84,7 +84,7 @@ export default class ApiFcc extends Component {
           <table className="table w-50 text-center">
             <tbody>
               {this.state.arrTask
-                .filter((task) => task.status === false)
+                .filter((task) => !task.status)
                 .map((task, index) => {
                   return (
                     <tr key={index}>
@@ -116,7 +116,7 @@ export default class ApiFcc extends Component {
             </tbody>
             <tfoot>
               {this.state.arrTask
-                .filter((task) => task.status === true)
+                .filter((task) => task.status)
                 .map((task, index) => {
                   return (
                     <tr key={index}>

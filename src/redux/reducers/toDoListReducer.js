@@ -1,5 +1,6 @@
 const stateDefault = {
   tasks: [],
+  //search:'',
 };
 
 export const toDoListReducer = (state = stateDefault, action) => {
